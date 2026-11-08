@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디퍼 AI 미니살롱 1주차</title>
+<meta name="description" content="디퍼 AI 미니살롱 1주차 강의 자료: 사람이 보이는 접수창구 만들기">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#111916;overflow:hidden;font-family:'Noto Sans KR',Arial,sans-serif}
+p,h1,h2,h3,ul,ol{margin:0}
+p{line-height:1.4} h1{line-height:1.1} h2{line-height:1.15} h3{line-height:1.2}
+ul,ol{padding-left:1.3em}
+a{color:inherit;text-decoration:underline}
+img,svg{display:block;flex:none}
+table{width:100%;border-collapse:collapse;line-height:1.4}
+th,td{padding:.35em .6em;text-align:left;vertical-align:middle;border-bottom:2px solid rgba(30,43,38,.16)}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+.slide{display:none;position:absolute;left:0;top:0;width:1920px;height:1080px}
+.slide.on{display:block}
+.slide>section{width:1920px;height:1080px;position:relative;overflow:hidden}
+#hud{position:fixed;right:14px;bottom:10px;color:#9FB0A6;font:500 14px/1 'Noto Sans KR',Arial,sans-serif;opacity:.8;user-select:none}
+#hud b{color:#F6F2E8}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;height:auto;background:#fff}
+  #stage{position:static;transform:none!important}
+  .slide{display:block;position:relative;page-break-after:always}
+  #hud{display:none}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+<div class="slide" data-n="1">
+<section id="cover" style="background:#1E2B26;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:28px;font-weight:700;color:#E3A53B;letter-spacing:3px">DEEPER AI MINI SALON · 2026.11.08 (일)</p>
+<h1 style="font-family:'Noto Serif KR', Georgia, serif;font-size:112px;font-weight:700;line-height:1.2">사람이 보이는<br>접수창구 만들기</h1>
+<p style="font-size:40px;color:#C9D3CC;line-height:1.5">첫 강의 · 4주 코스 설명과 첫 실습</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#9FB0A6">매주 일요일 저녁 8:30~10:00 · 총 4회 · 디퍼 별지기 헤더</p>
+</section>
+</div>
+<div class="slide" data-n="2">
+<section id="today" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">TONIGHT · 20:30 – 22:00</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">오늘의 90분</h2>
+</div>
+<table style="font-size:32px;color:#1E2B26">
+<tr><th style="width:24%;text-align:left;font-weight:700;color:#2F6B5A">시각</th><th style="width:76%;text-align:left;font-weight:700;color:#2F6B5A">순서</th></tr>
+<tr><td>20:30 · 10분</td><td>강의를 어떻게 듣게 되었는지</td></tr>
+<tr><td>20:40 · 20분</td><td>강의: 전체 코스 설명, 화면 공유</td></tr>
+<tr><td>21:00 · 10분</td><td>질문</td></tr>
+<tr><td>21:10 · 20분</td><td>실습: 앱 정하기, 글쓰기, 클로드에 넣기</td></tr>
+<tr><td>21:30 · 20분</td><td>소감 나눔</td></tr>
+<tr><td>21:50 · 10분</td><td>마무리</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="3">
+<section id="intro" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">OPENING · 10MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">이 강의를 어떻게 듣게 되셨나요?</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:40px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:80px">1</p>
+<p style="font-size:38px;line-height:1.4">어떻게 이 강의를 알게 되었나요?</p>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:40px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:80px">2</p>
+<p style="font-size:38px;line-height:1.4">4주 뒤에 무엇이 달라져 있으면 좋겠나요?</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="4">
+<section id="why" style="background:#1E2B26;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:28px;font-weight:700;color:#E3A53B;letter-spacing:3px">WHY THIS SALON</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:80px;font-weight:700;line-height:1.3">창문은 클릭 한 번이면 만들어집니다.<br>드나드는 사람을 보는 일은 그렇지 않습니다.</h2>
+<p style="font-size:36px;color:#C9D3CC;line-height:1.5">파는 것이 무엇이든, 일의 본질은 사람입니다.</p>
+</section>
+</div>
+<div class="slide" data-n="5">
+<section id="weeks" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">4 WEEKS · 매주 일요일 저녁</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">4주, 매주 하나씩</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#2F6B5A;color:#F6F2E8;padding:36px;border-radius:20px">
+<p style="font-size:28px;font-weight:700;color:#F3CF8A">1주 · 11/8 (오늘)</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.3">기존 데이터 보는 창구 설계</h3>
+<p style="font-size:26px;line-height:1.5;color:#E4EEE9">과제 · 흩어진 데이터 찾아서 입력</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFDF7;padding:36px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A">2주 · 11/15</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.3">고객 기준으로 신청 폼 만들기</h3>
+<p style="font-size:26px;line-height:1.5;color:#4A564F">과제 · 신청 폼을 받은 뒤 고객의 경로</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFDF7;padding:36px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A">3주 · 11/22</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.3">잠그고 넣기</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFDF7;padding:36px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A">4주 · 11/29</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.3">대시보드로 첫 연락 취하기</h3>
+</div>
+</div>
+<p style="font-size:30px;color:#4A564F;line-height:1.5">매주 과제를 가져오면, 다음 주에 그 위에서 이어 만듭니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="6">
+<section id="ui-db" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">UI &amp; DB · COURSE MAP</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:60px;font-weight:700;line-height:1.15">UI와 DB, 주차마다 이렇게 다룹니다</h2>
+</div>
+<div style="position:relative;width:1664px;height:300px">
+<div style="position:absolute;left:0px;top:0px;width:400px;height:240px">
+<svg width="400" height="240" viewBox="0 0 400 240" aria-label="브라우저 창 모양의 UI 그림: 입력 칸, 버튼, 작은 막대 차트" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="4" width="392" height="232" rx="18" fill="#FFFDF7" stroke="#1E2B26" stroke-width="4"/>
+<path d="M4 22 A18 18 0 0 1 22 4 L378 4 A18 18 0 0 1 396 22 L396 58 L4 58 Z" fill="#2F6B5A"/>
+<circle cx="34" cy="31" r="8" fill="#E3A53B"/>
+<circle cx="62" cy="31" r="8" fill="#F6F2E8"/>
+<circle cx="90" cy="31" r="8" fill="#F6F2E8"/>
+<rect x="28" y="82" width="170" height="26" rx="8" fill="#E9E3D2"/>
+<rect x="28" y="122" width="170" height="26" rx="8" fill="#E9E3D2"/>
+<rect x="28" y="170" width="110" height="36" rx="18" fill="#E3A53B"/>
+<rect x="232" y="150" width="28" height="56" rx="5" fill="#2F6B5A"/>
+<rect x="272" y="120" width="28" height="86" rx="5" fill="#3F8672"/>
+<rect x="312" y="90" width="28" height="116" rx="5" fill="#E3A53B"/>
+</svg>
+</div>
+<svg width="1664" height="300" viewBox="0 0 1664 300" aria-hidden="true" style="position:absolute;left:0px;top:0px"><line x1="410" y1="120" x2="530" y2="120" stroke="#1E2B26" stroke-width="4"/><polygon points="404,120 422,111 422,129" fill="#1E2B26"/><polygon points="536,120 518,111 518,129" fill="#1E2B26"/></svg>
+<p style="position:absolute;left:404px;top:76px;width:132px;font-size:24px;font-weight:700;color:#2F6B5A;text-align:center">저장·조회</p>
+<div style="position:absolute;left:540px;top:0px;width:220px;height:240px">
+<svg width="220" height="240" viewBox="0 0 220 240" aria-label="데이터가 쌓이는 원통 모양의 DB 그림" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 54 L14 190 A96 36 0 0 0 206 190 L206 54 Z" fill="#2F6B5A" stroke="#1E2B26" stroke-width="4"/>
+<path d="M14 100 A96 36 0 0 0 206 100" fill="none" stroke="#F6F2E8" stroke-width="3" opacity="0.7"/>
+<path d="M14 146 A96 36 0 0 0 206 146" fill="none" stroke="#F6F2E8" stroke-width="3" opacity="0.7"/>
+<ellipse cx="110" cy="54" rx="96" ry="36" fill="#3F8672" stroke="#1E2B26" stroke-width="4"/>
+</svg>
+</div>
+<p style="position:absolute;left:0px;top:254px;width:400px;font-size:32px;font-weight:700;text-align:center;font-family:'Noto Serif KR', Georgia, serif">UI (User Interface)</p>
+<p style="position:absolute;left:500px;top:254px;width:300px;font-size:32px;font-weight:700;text-align:center;font-family:'Noto Serif KR', Georgia, serif">DB (Database)</p>
+<div style="position:absolute;left:820px;top:0px;width:402px;height:236px;background:#1E2B26;border-radius:20px"></div>
+<div style="position:absolute;left:848px;top:24px;width:56px;height:56px"><svg width="56" height="56" viewBox="0 0 56 56" aria-label="화면 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#E3A53B"/><rect x="14" y="16" width="28" height="24" rx="4" fill="none" stroke="#1E2B26" stroke-width="3"/><line x1="14" y1="24" x2="42" y2="24" stroke="#1E2B26" stroke-width="3"/><circle cx="19" cy="20" r="1.6" fill="#1E2B26"/></svg></div>
+<p style="position:absolute;left:920px;top:38px;width:290px;font-size:26px;font-weight:700;color:#E3A53B">UI · User Interface</p>
+<p style="position:absolute;left:848px;top:92px;width:350px;font-size:34px;font-weight:700;color:#F6F2E8">보고 누르는 화면</p>
+<p style="position:absolute;left:848px;top:144px;width:350px;font-size:26px;line-height:1.5;color:#C9D3CC">신청 폼 · 고객 목록 · 대시보드. 내 사람들과 만나는 창구입니다.</p>
+<div style="position:absolute;left:1262px;top:0px;width:402px;height:236px;background:#2F6B5A;border-radius:20px"></div>
+<div style="position:absolute;left:1290px;top:24px;width:56px;height:56px"><svg width="56" height="56" viewBox="0 0 56 56" aria-label="데이터베이스 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#F3CF8A"/><ellipse cx="28" cy="19" rx="12" ry="5" fill="none" stroke="#1E2B26" stroke-width="3"/><path d="M16 19 V37 A12 5 0 0 0 40 37 V19" fill="none" stroke="#1E2B26" stroke-width="3"/><path d="M16 28 A12 5 0 0 0 40 28" fill="none" stroke="#1E2B26" stroke-width="3"/></svg></div>
+<p style="position:absolute;left:1362px;top:38px;width:290px;font-size:26px;font-weight:700;color:#F3CF8A">DB · Database</p>
+<p style="position:absolute;left:1290px;top:92px;width:350px;font-size:34px;font-weight:700;color:#F6F2E8">정보가 쌓이는 창고</p>
+<p style="position:absolute;left:1290px;top:144px;width:350px;font-size:26px;line-height:1.5;color:#E4EEE9">신청과 고객 기록을 저장하고, 잠가서 지킵니다.</p>
+</div>
+<div style="position:relative;width:1664px;height:300px">
+<div style="position:absolute;left:0px;top:0px;width:400px;height:298px;background:#E9E3D2;border-radius:16px"></div>
+<div style="position:absolute;left:540px;top:0px;width:220px;height:298px;background:#E9E3D2;border-radius:16px"></div>
+<div style="position:absolute;left:820px;top:0px;width:844px;height:72px;background:#FFFDF7;border:2px solid #DDD6C4;border-radius:16px"></div>
+<div style="position:absolute;left:820px;top:76px;width:844px;height:72px;background:#FFFDF7;border:2px solid #DDD6C4;border-radius:16px"></div>
+<div style="position:absolute;left:820px;top:152px;width:844px;height:72px;background:#FFFDF7;border:2px solid #DDD6C4;border-radius:16px"></div>
+<div style="position:absolute;left:820px;top:228px;width:844px;height:72px;background:#FFFDF7;border:2px solid #DDD6C4;border-radius:16px"></div>
+<p style="position:absolute;left:0px;top:8px;width:400px;font-size:30px;font-weight:700;line-height:56px;background:#2F6B5A;color:#F6F2E8;border-radius:28px;text-align:center">① 1주차</p>
+<p style="position:absolute;left:280px;top:84px;width:380px;font-size:30px;font-weight:700;line-height:56px;background:#E3A53B;color:#1E2B26;border-radius:28px;text-align:center">② 2주차</p>
+<p style="position:absolute;left:540px;top:160px;width:220px;font-size:30px;font-weight:700;line-height:56px;background:#1E2B26;color:#F6F2E8;border-radius:28px;text-align:center">③ 3주차</p>
+<p style="position:absolute;left:0px;top:236px;width:754px;font-size:30px;font-weight:700;line-height:50px;background:#FFFDF7;color:#2F6B5A;border:3px solid #2F6B5A;border-radius:28px;text-align:center">④ 4주차 · UI + DB</p>
+<div style="position:absolute;left:842px;top:10px;width:52px;height:52px"><svg width="52" height="52" viewBox="0 0 56 56" aria-label="화면 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#2F6B5A"/><rect x="14" y="16" width="28" height="24" rx="4" fill="none" stroke="#F6F2E8" stroke-width="3"/><line x1="14" y1="24" x2="42" y2="24" stroke="#F6F2E8" stroke-width="3"/><circle cx="19" cy="20" r="1.6" fill="#F6F2E8"/></svg></div>
+<p style="position:absolute;left:910px;top:18px;width:740px;font-size:30px;font-weight:700;line-height:1.3">기존 데이터를 보는 창구(UI) 설계</p>
+<div style="position:absolute;left:842px;top:86px;width:52px;height:52px"><svg width="52" height="52" viewBox="0 0 56 56" aria-label="연결 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#E3A53B"/><rect x="10" y="22" width="14" height="12" rx="3" fill="none" stroke="#1E2B26" stroke-width="3"/><line x1="24" y1="28" x2="32" y2="28" stroke="#1E2B26" stroke-width="3"/><circle cx="39" cy="28" r="7" fill="none" stroke="#1E2B26" stroke-width="3"/></svg></div>
+<p style="position:absolute;left:910px;top:94px;width:740px;font-size:30px;font-weight:700;line-height:1.3">고객 기준 신청 폼(UI)을 만들어 DB와 잇기</p>
+<div style="position:absolute;left:842px;top:162px;width:52px;height:52px"><svg width="52" height="52" viewBox="0 0 56 56" aria-label="자물쇠 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#1E2B26"/><path d="M20 26 V21 A8 8 0 0 1 36 21 V26" fill="none" stroke="#F6F2E8" stroke-width="3.5"/><rect x="15" y="26" width="26" height="18" rx="4" fill="#F6F2E8"/><circle cx="28" cy="34" r="2.6" fill="#1E2B26"/></svg></div>
+<p style="position:absolute;left:910px;top:170px;width:740px;font-size:30px;font-weight:700;line-height:1.3">DB를 잠그고 정보 넣기</p>
+<div style="position:absolute;left:842px;top:238px;width:52px;height:52px"><svg width="52" height="52" viewBox="0 0 56 56" aria-label="대시보드 아이콘" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="26" fill="#FFFDF7" stroke="#2F6B5A" stroke-width="3"/><rect x="15" y="29" width="7" height="11" rx="2" fill="#2F6B5A"/><rect x="25" y="21" width="7" height="19" rx="2" fill="#3F8672"/><rect x="35" y="15" width="7" height="25" rx="2" fill="#E3A53B"/></svg></div>
+<p style="position:absolute;left:910px;top:246px;width:740px;font-size:30px;font-weight:700;line-height:1.3">대시보드(UI)로 DB의 정보를 보고 첫 연락 취하기</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="7">
+<section id="after" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">AFTER 4 WEEKS</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">4주 뒤 달라지는 점</h2>
+</div>
+<table style="font-size:32px;color:#1E2B26">
+<tr><th style="width:50%;text-align:left;font-weight:700;color:#4A564F">전</th><th style="width:50%;text-align:left;font-weight:700;color:#2F6B5A">후</th></tr>
+<tr><td>신청과 연락이 노트·카톡·엑셀에 흩어져 있다</td><td>한 곳에 모인다</td></tr>
+<tr><td>단골과 소홀해진 사람을 기억에 의존한다</td><td>목록으로 한눈에 확인한다</td></tr>
+<tr><td>소개 관계가 머릿속에만 있다</td><td>기록되고 눈에 보인다</td></tr>
+<tr><td>받아도 되는지, 누가 봐도 되는지 불안하다</td><td>정해 둔 원칙으로 판단하고 잠가 둔다</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="8">
+<section id="method" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">HOW IT RUNS</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">이렇게 진행합니다</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#2F6B5A;width:56px;height:56px"><polyline points="4 12 9 17 20 6"/></svg>
+<h3 style="font-size:40px;font-weight:700;line-height:1.25">매주 하나의 판단</h3>
+<p style="font-size:30px;line-height:1.5;color:#4A564F">한 주에 한 가지를 정하고, 결과물 하나가 남습니다.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#2F6B5A;width:56px;height:56px"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+<h3 style="font-size:40px;font-weight:700;line-height:1.25">흩어진 데이터 찾기부터</h3>
+<p style="font-size:30px;line-height:1.5;color:#4A564F">내 사람들의 정보가 지금 어디에 있는지부터 찾습니다.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#2F6B5A;width:56px;height:56px"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+<h3 style="font-size:40px;font-weight:700;line-height:1.25">잠그고 넣기</h3>
+<p style="font-size:30px;line-height:1.5;color:#4A564F">3주차에 누가 볼 수 있는지 정하고 잠급니다.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="9">
+<section id="scope" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">SCOPE</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">챙겨 드리는 것과 하지 않는 것</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF7;padding:44px;border-radius:20px">
+<h3 style="font-size:40px;font-weight:700;color:#2F6B5A">챙겨 드립니다</h3>
+<ul style="font-size:32px;line-height:1.7;color:#1E2B26">
+<li>타입별 칸 구성 카드</li>
+<li>연습용 샘플 데이터 3종</li>
+<li>폼을 함께 만들어 주는 스킬</li>
+<li>개인정보 원칙 문장 틀</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#1E2B26;color:#F6F2E8;padding:44px;border-radius:20px">
+<h3 style="font-size:40px;font-weight:700;color:#E3A53B">하지 않습니다</h3>
+<ul style="font-size:32px;line-height:1.7">
+<li>헌금·재정·결제 정보</li>
+<li>주민번호·계좌 등 식별 정보</li>
+<li>건강·처방·병력 정보</li>
+<li>회원가입·관리자 화면 개발</li>
+</ul>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="10">
+<section id="demo" style="background:#2F6B5A;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:32px;font-weight:700;color:#F3CF8A;letter-spacing:3px">SCREEN SHARE</p>
+<h1 style="font-family:'Noto Serif KR', Georgia, serif;font-size:112px;font-weight:700;line-height:1.2">화면 공유</h1>
+<p style="font-size:40px;color:#E4EEE9;line-height:1.5">한 화면에서 내 사람들의 데이터를 보는 창구입니다. 린스쿨 운영 DB를 가짜 데이터로 보여 드립니다.</p>
+</section>
+</div>
+<div class="slide" data-n="11">
+<section id="demo-list" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">DEMO 1 · 린스쿨 운영 DB · 목록 (가짜 데이터)</p>
+<div style="display:flex;flex-direction:column;width:1664px;height:730px;background:#F3F1EC;border:2px solid #CFC8B4;border-radius:24px;overflow:hidden">
+<div style="display:flex;flex-direction:column;gap:14px;background:#2D4F1A;padding:20px 32px 0px 32px">
+<div style="display:flex;align-items:center;gap:16px">
+<h3 style="font-size:38px;font-weight:700;color:#FFFEFB">린스쿨 인적자원 DB</h3>
+<p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:6px 20px;border-radius:30px">운영팀 전용 · 로컬 시제품</p>
+<p style="font-size:24px;background:#4B6B38;color:#E8F0DE;padding:6px 20px;border-radius:30px">메모: 로컬 파일 저장</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;align-items:center;height:56px;background:#FFFEFB;padding:0px 24px;border-radius:14px">
+<p style="font-size:26px;color:#6A7268">이름 · 초성 · 전화번호 · 학부모</p>
+</div>
+<div style="display:flex;align-items:center;height:56px;border:2px solid #7FA062;padding:0px 26px;border-radius:14px">
+<p style="font-size:26px;color:#FFFEFB">지우기</p>
+</div>
+</div>
+<div style="display:flex;gap:8px;align-items:flex-end">
+<p style="font-size:26px;font-weight:700;color:#C9DDB6;padding:12px 24px">교사 24</p>
+<p style="font-size:26px;font-weight:700;color:#2D4F1A;background:#F3F1EC;padding:12px 24px;border-radius:14px 14px 0px 0px">학생·학부모 36</p>
+<p style="font-size:26px;color:#A9C092;padding:12px 24px">소개 창구 준비 중</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;padding:18px 32px">
+<div style="display:flex;gap:12px">
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">전체 기수</p>
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">3회 이상 수강</p>
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">12기 수강 중</p>
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">코멘트 있음</p>
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">확인필요</p>
+<p style="font-size:26px;background:#FFFEFB;border:2px solid #E4E0D4;padding:8px 22px;border-radius:30px">수강 많은 순</p>
+</div>
+<p style="font-size:24px;color:#5A665F">학생 36명 / 전체 36명 · 수강 횟수는 이번 학기(12기) 포함, 신청만 한 기수 제외</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">윤서아</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2012 · 러시아 · 학부모 김하늘</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 7회 (12기 포함)</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 12</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">한지우</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2013 · 말레이시아 · 학부모 한도윤</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 6회 (12기 포함)</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 9</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">박시안</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2012 · 튀르키예 · 학부모 박서진</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 6회 (12기 포함)</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 6</p></div>
+</div>
+</div>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">최라온</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2008 · 러시아 · 학부모 최민서</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 6회</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 4</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">오하윤</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2010 · 캄보디아 · 학부모 오지후</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 5회 (12기 포함)</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 2</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 24px;border-radius:18px;box-shadow:0px 2px 8px rgba(30,43,38,0.12)">
+<div style="display:flex;align-items:center;gap:12px"><h3 style="font-size:30px;font-weight:700">강이안</h3><p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:2px 14px;border-radius:30px">학생</p></div>
+<p style="font-size:24px;color:#5A665F">2015 · 베트남 · 학부모 강도현</p>
+<div style="display:flex;gap:10px"><p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 16px;border-radius:30px">수강 4회 (12기 포함)</p><p style="font-size:24px;background:#E8EFD6;color:#3A4A25;padding:4px 16px;border-radius:30px">코멘트 1</p></div>
+</div>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08 · 화면의 이름과 숫자는 모두 가상입니다</p>
+</section>
+</div>
+<div class="slide" data-n="12">
+<section id="demo-detail" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">DEMO 2 · 린스쿨 운영 DB · 학생 상세 (가짜 데이터)</p>
+<div style="display:flex;flex-direction:column;gap:14px;width:1664px;height:730px;background:#F3F1EC;border:2px solid #CFC8B4;border-radius:24px;overflow:hidden;padding:24px">
+<div style="display:flex;align-items:center;gap:16px">
+<h3 style="font-size:44px;font-weight:700">윤다온</h3>
+<p style="font-size:24px;font-weight:700;background:#E4F0D8;color:#2D4F1A;padding:4px 16px;border-radius:30px">학생</p>
+<p style="font-size:24px;font-weight:700;background:#D9541E;color:#FFFEFB;padding:4px 18px;border-radius:30px">수강 4회</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="display:flex;flex-direction:column;gap:14px;width:560px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:22px 28px;border:2px solid #E4E0D4;border-radius:18px">
+<h3 style="font-size:30px;font-weight:700;color:#2D4F1A">기본 정보</h3>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">출생</p><p style="font-size:26px">2012-03-14</p></div>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">국가</p><p style="font-size:26px">태국</p></div>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">재학 코스</p><p style="font-size:26px">국제학교</p></div>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">학부모</p><p style="font-size:26px">윤재원</p></div>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">수강 횟수</p><p style="font-size:26px">4회 · 8기~11기</p></div>
+<div style="display:flex;gap:16px"><p style="font-size:24px;color:#6A7268;width:150px">신청만 한 기수</p><p style="font-size:26px;color:#8A9188">정보 없음</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:22px 28px;border:2px solid #E4E0D4;border-radius:18px">
+<h3 style="font-size:30px;font-weight:700;color:#2D4F1A">교사 코멘트 (3건)</h3>
+<div style="display:flex;flex-direction:column;gap:6px;background:#F3F7E6;border-left:6px solid #C8DE9A;padding:12px 18px;border-radius:8px">
+<p style="font-size:24px;color:#6A7268">8기 · 김가람 선생님</p>
+<p style="font-size:26px;line-height:1.4">수업에 꾸준히 참여하고, 질문이 많아 분위기를 살려 줍니다.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;background:#FFFEFB;padding:22px 28px;border:2px solid #E4E0D4;border-radius:18px">
+<h3 style="font-size:30px;font-weight:700;color:#2D4F1A">기수별 수강 내역</h3>
+<table style="font-size:26px;color:#1E2B26">
+<tr><th style="width:14%;text-align:left;font-weight:500;color:#6A7268">기수</th><th style="width:26%;text-align:left;font-weight:500;color:#6A7268">과목</th><th style="width:22%;text-align:left;font-weight:500;color:#6A7268">교사</th><th style="width:20%;text-align:left;font-weight:500;color:#6A7268">주차</th><th style="width:18%;text-align:left;font-weight:500;color:#6A7268">상태</th></tr>
+<tr><td>8기</td><td>과학</td><td style="color:#3F6B2A"><u>김가람</u></td><td>8주</td><td>수강</td></tr>
+<tr><td>8기</td><td>중국어</td><td style="color:#3F6B2A"><u>이도하</u></td><td>8주</td><td>수강</td></tr>
+<tr><td>9기</td><td>수학</td><td style="color:#3F6B2A"><u>박나래</u></td><td style="color:#8A9188">정보 없음</td><td>수강</td></tr>
+<tr><td>10기</td><td>독서</td><td style="color:#3F6B2A"><u>정하윤</u></td><td>12주</td><td>수강</td></tr>
+<tr><td>11기</td><td>영어</td><td style="color:#3F6B2A"><u>최서온</u></td><td style="color:#8A9188">정보 없음</td><td>수강</td></tr>
+</table>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08 · 화면의 이름과 숫자는 모두 가상입니다</p>
+</section>
+</div>
+<div class="slide" data-n="13">
+<section id="qna" style="background:#1E2B26;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:28px;font-weight:700;color:#E3A53B;letter-spacing:3px">Q &amp; A · 10MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:96px;font-weight:700;line-height:1.25">질문</h2>
+<p style="font-size:36px;color:#C9D3CC;line-height:1.5">코스와 오늘 실습에 대해 궁금한 점을 나눕니다.</p>
+</section>
+</div>
+<div class="slide" data-n="14">
+<section id="w1-divider" style="background:#2F6B5A;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:32px;font-weight:700;color:#F3CF8A;letter-spacing:3px">PRACTICE · 20MIN</p>
+<h1 style="font-family:'Noto Serif KR', Georgia, serif;font-size:112px;font-weight:700;line-height:1.2">내 앱의 첫 화면 만들기</h1>
+<p style="font-size:40px;color:#E4EEE9;line-height:1.5">5분 생각하고 · 10분 쓰고 · 5분 클로드에 넣습니다.</p>
+</section>
+</div>
+<div class="slide" data-n="15">
+<section id="w1-think" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">PRACTICE 1 · 5MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">세 가지를 먼저 생각합니다</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:64px;font-weight:700;color:#2F6B5A">1</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.35">누구를 위한 앱인가?</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:64px;font-weight:700;color:#2F6B5A">2</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.35">핵심 기능은 무엇인가?</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:64px;font-weight:700;color:#2F6B5A">3</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.35">어떤 형태로 흩어져 있나?</h3>
+</div>
+</div>
+<p style="font-size:32px;color:#4A564F;line-height:1.5">카톡, 엑셀, 구글 폼, 종이 명부 등 지금 정보가 있는 곳을 모두 떠올려 봅니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="16">
+<section id="w1-sketch" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;gap:64px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">EXAMPLE · 헤더의 노트</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">먼저 노트에 그렸습니다</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFDF7;padding:24px 32px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:26px;font-weight:700;color:#2F6B5A">누구를 위한 앱?</p>
+<p style="font-size:32px;line-height:1.4">린스쿨 운영팀</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFDF7;padding:24px 32px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:26px;font-weight:700;color:#2F6B5A">핵심 기능은?</p>
+<p style="font-size:32px;line-height:1.4">교사 관리 · 학생(학부모) 관리</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFDF7;padding:24px 32px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:26px;font-weight:700;color:#2F6B5A">어떤 형태로 흩어져 있나?</p>
+<p style="font-size:32px;line-height:1.4">구글 폼 · 스프레드시트 · 카톡 · 엑셀 · 손글씨</p>
+</div>
+</div>
+<img src="assets/week1-notebook.webp" alt="헤더가 손으로 그린 노트: 화면 구성 스케치와 전체 인적자원 DB 항목 정리" style="width:568px;height:780px;object-fit:cover;border-radius:20px;border:2px solid #CFC8B4">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="17">
+<section id="w1-text" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">EXAMPLE · 헤더가 쓴 글</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:56px;font-weight:700;line-height:1.2">이 글을 클로드에게 건넸습니다</h2>
+</div>
+<div style="display:flex;gap:44px;align-items:flex-start">
+<img src="assets/week1-text-a.png" alt="클로드에게 건넨 글의 앞부분: 만들려는 페이지, 누구를 위한 앱인지, 핵심 기능" style="width:810px;height:484px;object-fit:contain;border-radius:12px;border:2px solid #CFC8B4">
+<img src="assets/week1-text-b.png" alt="글의 뒷부분: 학생 관리, 소개 창구, 흩어진 형태, 클로드에게 하는 요청" style="width:810px;height:537px;object-fit:contain;border-radius:12px;border:2px solid #CFC8B4">
+</div>
+<p style="font-size:28px;color:#4A564F;line-height:1.5">누구를 위한 앱 → 핵심 기능 → 흩어진 형태 → 요청, 이 순서로 썼습니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="18">
+<section id="w1-write" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">PRACTICE 2 · 10MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">글쓰기</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="background:#FFFDF7;padding:40px 48px;border-radius:20px">
+<p style="font-size:38px;line-height:1.5">앞의 세 질문에 대한 답을 이어서, 내 앱을 설명하는 글 한 편으로 씁니다.</p>
+</div>
+<div style="background:#FFFDF7;padding:40px 48px;border-radius:20px">
+<p style="font-size:38px;line-height:1.5">이 글이 클로드에게 건네는 첫 설명서가 됩니다.</p>
+</div>
+</div>
+<p style="font-size:30px;color:#1E2B26;line-height:1.5">실제 이름과 연락처는 쓰지 않고 가립니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="19">
+<section id="w1-claude" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">PRACTICE 3 · 5MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">클로드에 넣어서 만들어 보기</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A">1</p>
+<h3 style="font-size:38px;font-weight:700;line-height:1.35">쓴 글을 그대로 붙여 넣는다</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A">2</p>
+<h3 style="font-size:38px;font-weight:700;line-height:1.35">첫 화면을 만들어 달라고 한다</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF7;padding:44px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A">3</p>
+<h3 style="font-size:38px;font-weight:700;line-height:1.35">나온 화면을 살펴보고 수정할 곳을 고친다</h3>
+</div>
+</div>
+<p style="font-size:32px;color:#4A564F;line-height:1.5">결과가 마음에 들지 않아도 괜찮습니다. 어디가 어긋났는지가 내 글의 빈칸을 보여 줍니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="20">
+<section id="share" style="background:#E9E3D2;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">SHARING · 20MIN</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">소감 나눔</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:36px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:80px">1</p>
+<p style="font-size:36px;line-height:1.4">클로드가 만들어 준 화면은 어땠나요?</p>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:36px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:80px">2</p>
+<p style="font-size:36px;line-height:1.4">글을 쓰다가 막힌 곳, 새로 알게 된 것은 무엇인가요?</p>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:36px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:80px">3</p>
+<p style="font-size:36px;line-height:1.4">과제로 찾아올 흩어진 데이터는 어디에 있나요?</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#4F5A53">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="21">
+<section id="homework" style="background:#F6F2E8;color:#1E2B26;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#2F6B5A;letter-spacing:2px">WRAP-UP · 10MIN · HOMEWORK</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">1주차 숙제</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:36px 48px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:60px">1</p>
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-size:38px;font-weight:700;line-height:1.3">실습 진행해 보기</h3>
+<p style="font-size:28px;color:#4A564F;line-height:1.4">클로드에 넣어서 화면까지 만들어 봅니다.</p>
+</div>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#FFFDF7;padding:36px 48px;border:1px solid #DDD6C4;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#2F6B5A;width:60px">2</p>
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-size:38px;font-weight:700;line-height:1.3">데이터가 어디 있는지 파악하고 폴더에 모아 보기</h3>
+<p style="font-size:28px;color:#4A564F;line-height:1.4">카톡, 엑셀, 구글 폼, 종이 명부 등 흩어진 정보를 한 폴더에 모읍니다.</p>
+</div>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#1E2B26;color:#F6F2E8;padding:36px 48px;border-radius:20px">
+<p style="font-size:56px;font-weight:700;color:#E3A53B;width:60px">3</p>
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-size:38px;font-weight:700;line-height:1.3">두 사이트에 GitHub 계정으로 회원가입하기</h3>
+<p style="font-size:30px;line-height:1.5;color:#C9D3CC"><a href="https://www.netlify.com/" target="_blank" rel="noopener">https://www.netlify.com/</a> · <a href="https://supabase.com/" target="_blank" rel="noopener">https://supabase.com/</a></p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#5A665F">디퍼 AI 미니살롱 · 1주차 · 11.08</p>
+</section>
+</div>
+<div class="slide" data-n="22">
+<section id="closing" style="background:#1E2B26;color:#F6F2E8;font-family:'Noto Sans KR', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:28px;font-weight:700;color:#E3A53B;letter-spacing:3px">NEXT WEEK</p>
+<h2 style="font-family:'Noto Serif KR', Georgia, serif;font-size:88px;font-weight:700;line-height:1.25">11월 15일(일) 저녁 8:30<br>2주차 · 고객 기준으로 신청 폼 만들기</h2>
+<p style="font-size:36px;color:#C9D3CC;line-height:1.5">오늘 찾은 데이터가 다음 주 폼의 재료가 됩니다.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#9FB0A6">문의 · 디퍼 별지기 헤더</p>
+</section>
+</div>
+</div>
+<div id="hud"><b id="cur">1</b> / <span id="tot"></span> · ← → 키로 넘기기 · F 전체화면</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')), stage=document.getElementById('stage');
+  var cur=document.getElementById('cur'); document.getElementById('tot').textContent=slides.length;
+  var i=0;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    cur.textContent=i+1;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  function fit(){
+    var s=Math.min(innerWidth/1920,innerHeight/1080);
+    stage.style.transform='translate(-50%,-50%) scale('+s+')';
+  }
+  addEventListener('resize',fit); fit();
+  addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(i+1)}
+    else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(i-1)}
+    else if(k==='Home'){show(0)} else if(k==='End'){show(slides.length-1)}
+    else if(k==='f'||k==='F'){ if(document.fullscreenElement){document.exitFullscreen()}else{document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()} }
+  });
+  addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    show(e.clientX<innerWidth*0.3? i-1 : i+1);
+  });
+  var x0=null;
+  addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  addEventListener('touchend',function(e){
+    if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>50){show(dx<0?i+1:i-1)}
+  });
+  var h=parseInt((location.hash||'').slice(1),10);
+  show(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>
